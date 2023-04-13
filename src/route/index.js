@@ -3,6 +3,38 @@ const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 
+// ===========================================================
+
+var header = {
+  name: {
+    firstname: 'Ivan',
+    lastname: 'Ivanov',
+  },
+
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$ в місяць',
+
+  address: '26, Soborna str, Rivne, Ukraine',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'ivan@mail.com',
+      href: 'mailto:ivan@mail.com',
+    },
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    LinkedIn: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+  address: '26, Soborna str, Rivne, Ukraine',
+}
+
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -23,10 +55,267 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume | Summary',
+    },
+
+    header,
+
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to 
+              work on a new project I learn the domain and try to understand the idea of the project.Good team player,
+              every colleague is a friend to me.`,
+      },
+
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
+              tournament position, goals etc), analyzing by simple mathematics models and preparing probability
+              for such events like: money line - first win / draw / second win, totals etc.`,
+      },
+    
+    hobbies: [
+      {
+        name: 'Sport',
+        isMain: false
+      },
+      {
+        name: 'Tourism',
+        isMain: true
+      },
+      {
+        name: 'Books',
+        isMain: false
+      },
+    ],
+    },
+   
+    footer,
   })
 })
 
 // ================================================================
+//              ↙ тут вводимо шлях (PATH) до сторінки
+
+router.get('/skills', function (req, res) {
+
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Skills',
+    },
+
+    header,
+
+    main: {
+      title: 'All skils',
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Handlbars',
+          point: 7,
+          isTop: false,
+        },
+        {
+          name: 'VSC',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Git',
+          point: 7,
+          isTop: false,
+        },
+        {
+          name: 'Terminal',
+          point: 8,
+          isTop: false,
+        },
+        {
+          name: 'NPM',
+          point: 0,
+          isTop: false,
+        },
+        {
+          name: 'React.js',
+          point: null,
+        },
+      ],
+
+      title: 'My hobbies',
+    hobbies: [
+      {
+        name: 'Sport',
+        isMain: false
+      },
+      {
+        name: 'Tourism',
+        isMain: true
+      },
+      {
+        name: 'Books',
+        isMain: false
+      },
+    ],
+    },
+   
+
+    footer,
+  })
+
+})
+
+
+// ================================================================
+
+// ↙ тут вводимо шлях (PATH) до сторінки
+
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Education',
+    },
+    header,
+
+    main: {
+      title: 'My education',
+      education: [
+        {
+          name: 'KNU',
+          isEnd: true
+        },
+        {
+          name: 'LNTU',
+          isEnd: true
+        },
+        {
+          name: 'NUWUN',
+          isEnd: false
+        },
+      ],
+
+      title: 'My certificates',
+      
+      certificate: [
+        {
+          name: 'EnglishClub',
+          id: 11
+        },
+        {
+          name: 'WebDesign',
+          id: 22
+        },
+        {
+          name: 'Fullstak',
+          id: 33
+        }
+      ]
+    },
+
+    footer,
+  })
+})
+
+// ================================================================
+
+
+
+// ↙ тут вводимо шлях (PATH) до сторінки
+
+router.get('/work', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+    
+    layout: 'big'  ,    
+       
+    page: {
+      title: 'Resume | Work',
+    },
+    header,
+
+    main: {
+      title: 'Work history',
+
+      works: [{
+
+      position: 'Junior Fullstak Developer',
+      company: {
+        name: 'IT Brains',
+        url: 
+        null},
+        // 'https:it-brains.com.ua/'},
+
+      duration: {
+        form: '20.01.2013',
+        // to: '12.05.2017'
+        to: null
+      },
+      projectAmount: 1,
+
+      projects: [
+        {
+          name: 'Resume',
+          url: 'https://resume.com.ua/',          
+          about: 'Peges for employment',
+          
+          nameStacks: 'Projects stacks',
+          
+          stacks: [
+            {
+              name: 'React.js'
+            },
+            {
+              name: 'HTML/CSS'
+            },
+            {
+              name: 'Noud.js'
+            },
+            ],
+            stacksAmount: 3,
+
+
+          nameAwards: 'Projects awards',
+          awards: [
+            {
+              name: 'nbhfrtdr'
+            }, 
+            {
+              name: 'sdfbnwr'
+            },
+            // {
+            //   name: '11ndaberydr'
+            // }
+          ],
+          awardsAmount: 2,
+      }]
+
+      
+      }]
+
+      
+  
+    },
+
+    footer,
+  })
+})
+
+// ================================================================
+
+
+
 
 // Підключаємо роутер до бек-енду
 module.exports = router
