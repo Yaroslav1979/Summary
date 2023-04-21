@@ -518,6 +518,9 @@ router.get('/bio', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
+
+    layout: 'program',
+
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -544,7 +547,7 @@ router.get('/program', function (req, res) {
                     name: 'Mona Lisa',
                     artist: 'Leonardo da Vinci',
                     description: 'Iconic portrait painting',
-                    audio_guide: true,
+                    audio_guide: false,
                   },
                   {
                     name: 'Winged Victory of Samothrace',
