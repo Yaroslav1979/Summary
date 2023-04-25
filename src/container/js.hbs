@@ -1,0 +1,65 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+    <main>
+         <section>
+            {{>nav}}
+            <div>
+                <h1> {{name}} </h1>
+                <P>{{description}}</P>
+                <hr>
+                <h2>History:</h2>
+                <ul>
+                    {{#with history}}
+                    <li>year: {{year}};</li>
+                    <li>founder: {{founder}}.</li>
+                    {{/with}}
+                </ul>
+
+               <h3>Types:</h3>
+                <p> {{types}} </p> 
+
+                <h3>Syntax:</h3>                
+                <ol> 
+                    {{#with syntax}}
+                    <li> <i> variables:<b>{{variables}}</b> </i> </li>
+                    <li> <i> functions:<b> {{functions}}</b> </i> </li>
+                    <li> <i> conditionals:<b> {{conditionals}}</b> </i> </li>
+                    <li> <i> loops:<b> {{loops}}</b> </i> </li>
+                    <li> <i>classes:<b> {{classes}}</b> </i> </li> 
+                    {{/with}}
+                </ol>
+
+                 <h3>Features:</h3>
+                <p> {{features}} </p>
+
+                 <h3>Libraries:</h3>
+                <p> {{libraries}} </p> 
+                
+                 <h3>Tools:</h3>
+                <p> {{tools}} </p> 
+
+                <h3>Community:</h3>
+
+                <ul>
+                    {{#each community}}
+                    <li> name: {{name}} <br>
+                    type: {{type}} </li>
+                    {{/each}}
+                </ul>
+               
+                
+                
+               
+
+                
+            </div>                
+        </section>       
+    </main>
+  
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
