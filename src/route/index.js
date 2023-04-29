@@ -76,23 +76,23 @@ router.get('/summary', function (req, res) {
               tournament position, goals etc), analyzing by simple mathematics models and preparing probability
               for such events like: money line - first win / draw / second win, totals etc.`,
       },
-    
-    hobbies: [
-      {
-        name: 'Sport',
-        isMain: false
-      },
-      {
-        name: 'Tourism',
-        isMain: true
-      },
-      {
-        name: 'Books',
-        isMain: false
-      },
-    ],
+
+      hobbies: [
+        {
+          name: 'Sport',
+          isMain: false,
+        },
+        {
+          name: 'Tourism',
+          isMain: true,
+        },
+        {
+          name: 'Books',
+          isMain: false,
+        },
+      ],
     },
-   
+
     footer,
   })
 })
@@ -101,7 +101,6 @@ router.get('/summary', function (req, res) {
 //              ↙ тут вводимо шлях (PATH) до сторінки
 
 router.get('/skills', function (req, res) {
-
   res.render('skills', {
     // ↙ сюди вводимо JSON дані
     page: {
@@ -150,28 +149,25 @@ router.get('/skills', function (req, res) {
       ],
 
       title: 'My hobbies',
-    hobbies: [
-      {
-        name: 'Sport',
-        isMain: false
-      },
-      {
-        name: 'Tourism',
-        isMain: true
-      },
-      {
-        name: 'Books',
-        isMain: false
-      },
-    ],
+      hobbies: [
+        {
+          name: 'Sport',
+          isMain: false,
+        },
+        {
+          name: 'Tourism',
+          isMain: true,
+        },
+        {
+          name: 'Books',
+          isMain: false,
+        },
+      ],
     },
-   
 
     footer,
   })
-
 })
-
 
 // ================================================================
 
@@ -192,34 +188,34 @@ router.get('/education', function (req, res) {
       education: [
         {
           name: 'KNU',
-          isEnd: true
+          isEnd: true,
         },
         {
           name: 'LNTU',
-          isEnd: true
+          isEnd: true,
         },
         {
           name: 'NUWUN',
-          isEnd: false
+          isEnd: false,
         },
       ],
 
       title: 'My certificates',
-      
+
       certificate: [
         {
           name: 'EnglishClub',
-          id: 11
+          id: 11,
         },
         {
           name: 'WebDesign',
-          id: 22
+          id: 22,
         },
         {
           name: 'Fullstak',
-          id: 33
-        }
-      ]
+          id: 33,
+        },
+      ],
     },
 
     footer,
@@ -227,8 +223,6 @@ router.get('/education', function (req, res) {
 })
 
 // ================================================================
-
-
 
 // ↙ тут вводимо шлях (PATH) до сторінки
 
@@ -237,9 +231,9 @@ router.get('/work', function (req, res) {
 
   res.render('work', {
     // ↙ сюди вводимо JSON дані
-    
-    layout: 'big'  ,    
-       
+
+    layout: 'big',
+
     page: {
       title: 'Resume | Work',
     },
@@ -248,72 +242,71 @@ router.get('/work', function (req, res) {
     main: {
       title: 'Work history',
 
-      works: [{
-
-      position: 'Junior Fullstak Developer',
-      company: {
-        name: 'IT Brains',
-        url: 
-        null},
-        // 'https:it-brains.com.ua/'},
-
-      duration: {
-        form: '20.01.2013',
-        // to: '12.05.2017'
-        to: null
-      },
-      projectAmount: 1,
-
-      projects: [
+      works: [
         {
-          name: 'Resume',
-          url: 'https://resume.com.ua/',          
-          about: 'Peges for employment',
-          
-          nameStacks: 'Projects stacks',
-          
-          stacks: [
-            {
-              name: 'React.js'
-            },
-            {
-              name: 'HTML/CSS'
-            },
-            {
-              name: 'Noud.js'
-            },
-            ],
-            stacksAmount: 3,
+          position: 'Junior Fullstak Developer',
+          company: {
+            name: 'IT Brains',
+            url: null,
+          },
+          // 'https:it-brains.com.ua/'},
 
+          duration: {
+            form: '20.01.2013',
+            // to: '12.05.2017'
+            to: null,
+          },
+          projectAmount: 1,
 
-          nameAwards: 'Projects awards',
-          awards: [
+          projects: [
             {
-              name: 'nbhfrtdr'
-            }, 
-            {
-              name: 'sdfbnwr'
+              name: 'Resume',
+              url: 'https://resume.com.ua/',
+              about: 'Peges for employment',
+
+              nameStacks: 'Projects stacks',
+
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML/CSS',
+                },
+                {
+                  name: 'Noud.js',
+                },
+              ],
+              stacksAmount: 3,
+
+              nameAwards: 'Projects awards',
+              awards: [
+                {
+                  name: 'nbhfrtdr',
+                },
+                {
+                  name: 'sdfbnwr',
+                },
+                // {
+                //   name: '11ndaberydr'
+                // }
+              ],
+              awardsAmount: 2,
             },
-            // {
-            //   name: '11ndaberydr'
-            // }
           ],
-          awardsAmount: 2,
-          }]      
-        }]  
-      },
+        },
+      ],
+    },
     footer,
   })
 })
 
 // ================================================================
 
-
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-
     layout: 'basic',
 
     person: {
@@ -412,12 +405,10 @@ router.get('/person', function (req, res) {
 
 // ================================================================
 
-
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-
     layout: 'basic',
 
     name: 'Albert Einstein',
@@ -513,12 +504,9 @@ router.get('/bio', function (req, res) {
 
 // ================================================================
 
-
-
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-
     layout: 'basic',
 
     program: {
@@ -734,6 +722,110 @@ router.get('/web', function (req, res) {
 
 // ================================================================
 
+router.get('/car', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('car', {
+    layout: 'basic',
+
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'silver',
+    features: {
+      interior: {
+        seats: {
+          material: 'leather',
+          color: 'black',
+          heated: true,
+          ventilated: true,
+        },
+        dashboard: {
+          material: 'plastic',
+          color: 'black',
+          display: {
+            type: 'LCD',
+            size: 10.1,
+            resolution: '1280x720',
+            touchscreen: true,
+          },
+        },
+        audio: {
+          system: 'JBL',
+          speakers: 8,
+          subwoofer: true,
+          bluetooth: true,
+          USB: true,
+        },
+      },
+      exterior: {
+        wheels: {
+          size: 18,
+          type: 'alloy',
+          color: 'silver',
+        },
+        headlights: {
+          type: 'LED',
+          brightness: 'high',
+          automatic: true,
+        },
+        sunroof: {
+          type: 'panoramic',
+          size: 'large',
+          automatic: true,
+        },
+      },
+      safety: {
+        airbags: {
+          front: 2,
+          side: 2,
+          knee: 2,
+          rear: 2,
+        },
+        assistance: {
+          blind_spot_monitoring: true,
+          rear_cross_traffic_alert: true,
+          lane_departure_warning: true,
+          adaptive_cruise_control: true,
+          collision_warning: true,
+        },
+      },
+    },
+    engine: {
+      type: 'gasoline',
+      displacement: 2.5,
+      horsepower: 206,
+      torque: 186,
+      transmission: {
+        type: 'automatic',
+        gears: 8,
+      },
+    },
+    fuel_economy: {
+      city: 28,
+      highway: 39,
+      combined: 32,
+    },
+    price: {
+      base: 25900,
+      destination: 995,
+      options: {
+        navigation: 1200,
+        moonroof: 800,
+        premium_paint: 595,
+      },
+      total: 28990,
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+
+
+// ================================================================
+
 
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -814,8 +906,6 @@ router.get('/js', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
-// ================================================================
 
 
 
