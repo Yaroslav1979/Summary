@@ -1,0 +1,78 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+    <main>
+         <section>
+            {{>nav}}
+             <div>
+                 {{#with heading}}   
+                    <div>
+                    {{#with main}}
+                        <h1 class="h1"> {{title}} </h1>
+                        <p>{{text}} </p>
+                        {{#with button_text}}
+                        <div>
+                            <button class="btn btn-primary">  {{solid}} </button>
+                            <br><br>
+                            <button class="btn btn-outline-primary">{{outline}} </button>
+                        </div>
+                        {{/with}}
+                    {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                    {{#with second}}
+                    <h2 class="text-secondary"> {{title}} </h2>
+                    <p class="text-secondary">{{text}}</p>
+                        {{#with button_text}}
+                            <button class="btn btn-secondary">{{solid}}</button>
+                            <br><br>
+                            <button class="btn btn-outline-secondary">{{outline}} </button>
+                        {{/with}}
+                    {{/with}}
+                    </div>
+                    <br>
+                    <div>
+                        {{#with subblock}}
+                        <h3 class="text-dark"> {{title}} </h3>
+                        <p class="text-dark">{{text}}</p>
+                        {{#with button_text}}
+                            <button class="btn btn-dark">{{solid}} </button> <br> <br>
+                            <button class="btn btn-outline-dark">{{outline}} </button>
+                        {{/with}}
+                        {{/with}}
+                    </div>
+                {{/with}}
+                <br>
+                <div>
+                {{#with nested_display}}
+                    <p class="display-1"> {{title}} </p>
+                    {{#with children_display}}                           
+                        <p class="display-4">{{title}}</p>
+                        <p>{{text}} </p>
+                        <button class="btn btn-outline-warning">{{button.text}}</button><br>                            
+                    {{/with}}
+                    <br>
+                    <h6> {{header_text}} </h6><br> 
+                    <button class="btn btn-info">{{button.text}}</button><br>                           
+                {{/with}}
+                </div>
+                <div> {{#with paragraph}}
+                        <p class="text-uppercase">{{title}} </p>
+                        <p class="text-lowercase">{{text}} </p>
+                        <a class="btn btn-link" href={{button.url}} target="_blank"> {{button.text}}</a>
+                        <ul>{{#each list_name}}                        
+                            <li><a class="btn btn-link" href={{url}} target="_blank"> {{text}}</a></li>                        
+                        {{/each}}</ul>
+                    {{/with}}
+                </div>              
+            </div>        
+        </section>       
+        </main>
+  
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
