@@ -1,9 +1,4 @@
-{{!-- 
-Це код container файлу для summary сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
-    <main>
+<main>
         {{>nav}}
                 <h1 class="text-center">{{page_header.title}}</h1>
                 <p class="text-center">{{page_header.description}}</p>
@@ -14,7 +9,7 @@
                     {{#with about_us}}
                         <p class="display-6 text-end">{{title_list.main}}</p>
                         <h2 class="text-end">{{title_list.sub}}</h2>
-                        <button class="btn btn.primary">{{button.text}}</button>
+                        <button class="btn btn-primary">{{button.text}}</button>
                      {{/with}}                     
                     </div>
                 </div>
@@ -29,7 +24,7 @@
                             <p class="display-4">{{title}}</p>
                             <h6>{{sub_title}}</h6>
                             <p>{{description}}</p>
-                            <button class="btn btn.outline.warning">{{button}}</button>
+                            <button class="btn btn-outline-warning">{{button}}</button>
                             {{/with}}
                             </div>
                         </div>
@@ -40,7 +35,7 @@
                             <p class="display-4 text-center">{{title}}</p>
                             <h6 class="text-center">{{sub_title}}</h6>
                             <p class="text-center">{{description}}</p>
-                            <button class="btn btn.outline.warning">{{button}}</button>
+                            <button class="btn btn-outline-warning">{{button}}</button>
                             {{/with}}
                             </div>
                         </div>
@@ -51,7 +46,7 @@
                             <p class="display-4 text-end">{{title}}</p>
                             <h6 class="text-end">{{sub_title}}</h6>
                             <p class="text-end">{{description}}</p>
-                            <button class="btn btn.outline.warning">{{button}}</button>
+                            <button class="btn btn-outline-warning">{{button}}</button>
                             {{/with}}
                             </div>
                         </div>                        
@@ -70,7 +65,7 @@
                              <div class="card">   
                                 <div class="card-body">
                                  <p>{{detail.text}}</p>
-                                <button class="btn btn.success">{{detail.button}}</button>
+                                <button class="btn btn-success">{{detail.button}}</button>
                                 </div>
                               </div>
                         {{/with}}
