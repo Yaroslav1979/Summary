@@ -1,0 +1,46 @@
+<main>
+    
+    <div>  
+      <ul class="breadcrumb"> 
+        {{#each breadcrumb}}
+        <li class="breadcrumb-item">
+        {{#if @last}}
+        {{name}}
+          {{else}}
+          <a href="{{url}}">{{name}}
+        </a>
+      {{/if}}
+        </li>
+        {{/each}}
+        </ul>
+      </div>
+    <div>
+
+      {{#with newsData}}
+      <img src="{{photo}}" alt="cat_picture" class="col-12">
+      <h1>{{head.heading}}</h1>
+      <p>{{head.description}}</p>
+
+      {{#each body}}
+        {{#if @first}}
+        <h2>{{title}} </h2>
+        <p>{{text}} </p>
+        {{else}}
+        <h3>{{title}} </h3>
+        <p>{{text}} </p>
+        {{/if}}
+      {{/each}}
+
+      {{/with}}
+    </div>
+    <hr>
+  <div>
+    {{#with newsOtherBlock}}
+    {{>shoppost}}
+    {{/with}}
+  </div>
+    <br>
+    <hr>  
+    <br>
+  {{>shopaction}}  
+</main>
