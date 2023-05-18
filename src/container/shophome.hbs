@@ -1,21 +1,5 @@
-<main>
-  {{>nav}}
-  <div class="card">    
-      <div class="nav">
-
-      {{#each navigation.links}}
-        <div class="nav-item">
-          {{#if href}}
-          <a href="{{href}}" class="nav-link">{{text}}</a>
-          {{else}}
-          <a href="{{href}}" class="nav-link disabled">{{text}}</a>
-          {{/if}}
-        </div>
-      {{/each}}
-      
-      </div>    
-  </div>
-
+<main>  
+   
   <div class="m-2">
     {{#with newsBlock}}
       <h1 class="text-center">{{title}}</h1>
@@ -29,19 +13,17 @@
              <h6 >{{title}} </h6>
 
             {{#if isTop}}
-            <span class="badge m-1">
-            <span class="rounded-pill text-bg-success px-2 py-1"> Top 
-            </span>
-            </span>
+              <span class="badge m-1">
+              <span class="rounded-pill text-bg-success px-2 py-1"> Top </span>
+              </span>
+              
             {{/if}}
-
             {{#if isNew}}
-            <span class="badge m-1"> 
-            <span class="rounded-pill text-bg-danger px-2 py-1" > New 
-            </span> 
-            </span>
-            {{/if}}          
-           
+              <span class="badge m-1"> 
+              <span class="rounded-pill text-bg-danger px-2 py-1" > New </span>
+              </span> 
+             
+              {{/if}}  
             </div>
             <p>{{description}} </p>
           </div>       
@@ -77,37 +59,13 @@
         {{/if}} 
       {{/each}}
       </div>
-      
-      <div class="row">
-          {{#each cards}}
-          <div class='card col-4 g-1'>
-            <div class='card-body'>
-              <img class="card-img-top p-1" src="{{image}}" alt="goods card">
-
-                <div class="card-title">
-                  <h6>{{title}}
-                         
-                  {{#if isHot}}
-                  <span class="badge">
-                    <span class="rounded-pill text-bg-warning px-2 py-1"> Hot! 
-                    </span>
-                  </span>
-                  {{/if}}
-
-                  {{#if isNew}}
-                  <span class="badge"> 
-                    <span class="rounded-pill text-bg-primary px-2 py-1">New  
-                    </span> 
-                  </span>
-                  {{/if}} </h6>    
-                </div> 
-                <p>{{description}} </p>         
-             </div>
-         </div>
-       {{/each}}
-      </div>
+            
+      {{>shopcard}}
+     
     {{/with}}
-  </div>
+  </div> 
+
+  <br><hr>
 
   <div>
     <br>
@@ -125,39 +83,9 @@
     </div>
     </div>
   </div>
-<br>
-<div>
-    <div class='card row'>
-        <div class='card-body text-bg-success text-center'>
-        {{#with service}}
-         <h2>{{title}} </h2>
-         <p>{{description}} </p> 
-          {{#each buttons}}
-        <a href="{{link}}" class="list-item" target="_blank">
-        <button class="btn btn-primary m-2">{{text}}</button></a>            
-        {{/each}}
-        {{/with}}
-        </div>
-    </div>    
-  </div>
+<br><hr> <br>
 
-  <div class="p-1">
-    {{#each footer}}
-        <div class="nav">
-           {{#each .}}
-            <div class="col-2 nav-item">
-              {{#if link}}
-                <a href="{{link}}" class="nav-link" target="_blank">
-                    <button class="btn btn-link">{{text}}</button>
-                </a>
-                {{else}}
-                <a href="{{link}}" class="nav-link disabled"> {{text}}                   
-                </a>
-                {{/if}}
-            </div>
-            {{/each}}
-        </div>
-        {{/each}}
-    </div>
+{{> shopaction}}
 
+<br><hr>
 </main>
