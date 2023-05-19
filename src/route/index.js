@@ -1599,7 +1599,7 @@ router.get('/shophome', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-// ==============================================================
+
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/shopproduct', function (req, res) {
