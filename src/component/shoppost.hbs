@@ -1,0 +1,27 @@
+<div class="row">
+  <h2 class="text-center">{{title}}</h2>
+        {{#each cards}}
+          <div class='card col-3 g-1'>
+            <div class='card-body text-bg-dark'>
+                <div class="card-title">
+                  <h6>{{title}}
+                         
+                  {{#if isTop}}
+                  <span class="badge">
+                    <span class="rounded-pill text-bg-warning px-2 py-1"> Hot! 
+                    </span>
+                  </span>
+                  {{/if}}
+
+                  {{#if idNew}}
+                  <span class="badge"> 
+                    <span class="rounded-pill text-bg-primary px-2 py-1">New  
+                    </span> 
+                  </span>
+                  {{/if}} </h6>    
+                </div> 
+                <p>{{description}} </p>         
+             </div>
+         </div>
+       {{/each}}      
+</div>

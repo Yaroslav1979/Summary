@@ -1600,16 +1600,14 @@ router.get('/shophome', function (req, res) {
 })
 
 
-// router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/task31', function (req, res) {
+router.get('/shopproduct', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task31', {
-    layout: 'basic',
-
+  res.render('shopproduct', {
+    layout: 'shop',
     navigation: {
       links: [
         {
@@ -1625,193 +1623,213 @@ router.get('/task31', function (req, res) {
           href: 'https://www.youtube.com/',
         },
       ],
-      button: {
-        text: 'Lets start',
-        href: 'https://nodejs.org/en/',
-      },
     },
-    header: {
-      title: 'Welcome to Our Website',
-      description:
-        'We offer innovative solutions to help grow your business. Our team of experts is committed to providing tailored strategies that deliver the best results.',
-      button: {
-        text: 'Learn More',
-        link: 'https://www.youtube.com/',
-      },
-    },
-    city: {
-      title: 'City list',
-      cards: [
-        {
-          picture: {
-            src: 'https://picsum.photos/400/200',
-            alt: 'New York',
-          },
-          title: 'New York City',
-          description:
-            'New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park.',
-          button: {
-            text: 'Read',
-            href: 'https://github.com/',
-          },
-        },
-        {
-          picture: {
-            src: 'https://picsum.photos/400/200',
-            alt: 'Paris',
-          },
-          title: 'Paris',
-          description:
-            "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture, haute couture fashion houses, and designer boutiques along the Rue du Faubourg Saint-Honoré.",
-          button: {
-            text: 'Read',
-            href: 'https://github.com/',
-          },
-        },
-        {
-          picture: {
-            src: 'https://picsum.photos/400/200',
-            alt: 'Tokyo',
-          },
-          title: 'Tokyo',
-          description:
-            "Tokyo, Japan’s bustling capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).",
-          button: {
-            text: 'Read',
-            href: 'https://github.com/',
-          },
-        },
-        {
-          picture: {
-            src: 'https://picsum.photos/400/200',
-            alt: 'Sydney',
-          },
-          title: 'Sydney',
-          description:
-            "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harborfront Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the arched Harbour Bridge and esteemed Royal Botanic Garden nearby. Sydney Tower’s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.",
-          button: {
-            text: 'Read',
-            href: 'https://github.com/',
-          },
-        },
-      ],
-    },
-    winner: {
-      title: 'Our winners',
-      table: {
-        head: ['#', 'name', 'surname', 'nickname'],
-        user: [
-          {
-            place: 1,
-            name: 'Ada',
-            surname: 'Lovelace',
-            nickname: 'The Enchantress of Numbers',
-          },
-          {
-            place: 2,
-            name: 'Grace',
-            surname: 'Hopper',
-            nickname: 'Amazing Grace',
-          },
-          {
-            place: 3,
-            name: 'Katherine',
-            surname: 'Johnson',
-            nickname: 'The Human Computer',
-          },
+
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'PC', url: 'https://www.google.com/' },
+      { name: 'Windows', url: 'https://github.com/' },
+      { name: 'Product PC #3123', url: null },
+    ],
+
+    productData: {
+      img: 'https://picsum.photos/400/200',
+
+      info: {
+        title: 'Product PC Asus 331 BC 671',
+        about:
+          "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        price: '1000$',
+
+        category: [
+          { name: 'HOT', isHot: true },
+          { name: 'New', isNew: true },
+          { name: 'Bonus', isBonus: true },
         ],
       },
+
+      actionList: [
+        { name: 'Buy', isWarning: true },
+        { name: 'Add to cart', isError: true },
+        { name: 'Like', isSuccess: true },
+        { name: 'Share', isGood: true },
+      ],
+
+      item: {
+        head: ['#', 'color', 'price'],
+
+        body: [
+          ['id312', 'red', '1100$'],
+          ['id532', 'blue', '1050$'],
+          ['id643', 'dark', '999$'],
+        ],
+      },
+
+      param: {
+        title: 'Product params',
+        list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
+      },
+
+      alert: {
+        isError: true,
+        text: 'Danger! This is a danger alert — check it out!',
+      },
     },
-    gallery: {
-      title: 'Picture history',
+
+    goodsOtherBlock: {
+      title: 'See other products',
+
       cards: [
         {
-          name: 'The Mona Lisa',
-          items: [
-            'Painting',
-            'Oil on poplar panel',
-            '1503-1519',
-          ],
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          isNew: false,
         },
         {
-          name: 'The Persistence of Memory',
-          items: ['Painting', 'Oil on canvas', '1931'],
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          isNew: false,
         },
         {
-          name: 'The Starry Night',
-          items: ['Painting', 'Oil on canvas', '1889'],
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          isNew: false,
         },
       ],
     },
-    relaxion: {
-      title: 'Relax',
-      cards: [
+
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
         {
-          header: 'Meditation',
-          title: 'The Benefits of Meditation',
-          description:
-            'Meditation can help reduce stress, anxiety, and depression, and improve overall well-being. Studies have also shown that regular meditation practice can enhance cognitive function and even boost the immune system.',
-        },
-        {
-          header: 'Hydration',
-          title: 'The Importance of Hydration',
-          description:
-            'Drinking enough water is essential for good health. Dehydration can lead to a range of symptoms, including fatigue, headaches, and constipation. It can also increase the risk of kidney stones and other health problems.',
-        },
-        {
-          header: 'Yoga',
-          title: 'The Benefits of Yoga',
-          description:
-            'Yoga can improve flexibility, strength, and balance, and help reduce stress and anxiety. It has also been shown to improve heart health and promote a sense of well-being.',
-        },
-        {
-          header: 'Sunscreen',
-          title: 'The Importance of Sunscreen',
-          description:
-            "Protecting your skin from the sun's harmful rays is crucial for reducing the risk of skin cancer and premature aging. Experts recommend using a broad-spectrum sunscreen with an SPF of at least 30 and reapplying every two hours.",
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+          rel: 'show-more',
         },
       ],
     },
-    rest: {
-      cards: [
+
+    footer: [
+      [
         {
-          header: 'Cooking',
-          title: 'The Joy of Cooking',
-          description:
-            'Cooking is a creative outlet that can bring people together over delicious food.',
-          button: 'Learn More',
-          footer: 'Photo by Brooke Lark on Unsplash',
+          text: 'Home',
+          link: 'https://www.youtube.com/',
         },
         {
-          header: 'Travel',
-          title: 'The Benefits of Traveling',
-          description:
-            'Traveling broadens your perspective, provides new experiences, and creates lasting memories.',
-          button: 'Explore',
-          footer: 'Photo by Sime Basioli on Unsplash',
-        },
-      ],
-    },
-    proposition: {
-      title: 'Proposition',
-      card: [
-        {
-          header: 'Our Approach',
-          title: 'Innovative Solutions for Your Business',
-          description:
-            'We create effective solutions that cater to your business needs.',
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
         },
         {
-          header: 'Our Expertise',
-          title: 'Trusted and Experienced Professionals',
-          description:
-            'Our team of experts delivers tailored strategies for best results.',
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
         },
       ],
-    },
-    footer: {
-      title: 'Navigation',
-      navigation: [
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopnews', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopnews', {
+    layout: 'shop',
+    navigation: {
+      links: [
         {
           text: 'Home',
           href: 'https://github.com/',
@@ -1825,39 +1843,194 @@ router.get('/task31', function (req, res) {
           href: 'https://www.youtube.com/',
         },
       ],
-      socialMedia: [
+    },
+
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'News', url: 'https://www.google.com/' },
+      { name: 'Today', url: 'https://github.com/' },
+      { name: 'About cats', url: null },
+    ],
+
+    newsData: {
+      photo: 'https://picsum.photos/400/200',
+
+      head: {
+        heading: 'About cats',
+        description:
+          "Cats are adorable and beloved pets that have been domesticated for thousands of years. They are known for their independent and playful nature, as well as their agility and hunting skills. With their soft fur, purring, and cuddling, cats make great companions and can bring joy and relaxation to their owners. From domestic short-hairs to exotic breeds, cats come in many shapes, sizes, and colors, each with their own unique personalities. Whether they are napping in a sunny spot or chasing a toy, cats always bring a smile to their owner's faces.",
+      },
+
+      body: [
         {
-          name: 'Facebook',
-          link: 'https://www.facebook.com/',
+          title: 'Cats have a keen sense of hearing',
+          text: 'With their highly sensitive ears, cats can detect sounds that are too faint for humans to hear, including the ultrasonic calls of rodents and other small prey.',
         },
         {
-          name: 'Twitter',
-          link: 'https://twitter.com/',
+          title: 'Cats are natural hunters',
+          text: 'Thanks to their sharp claws, quick reflexes, and stealthy movements, cats are excellent hunters. They can catch mice, rats, birds, and other prey with ease.',
         },
         {
-          name: 'Instagram',
-          link: 'https://www.instagram.com/',
-        },
-      ],
-      partners: [
-        {
-          name: 'Acme Inc.',
-          link: 'https://www.acme.com/',
+          title: 'Cats are independent creatures',
+          text: "Cats are known for their independent nature, and unlike dogs, they don't require constant attention and affection from their owners. They are perfectly content to entertain themselves with toys and explore their surroundings on their own.",
         },
         {
-          name: 'Globex Corporation',
-          link: 'https://www.globex.com/',
+          title: 'Cats have a unique way of communicating',
+          text: 'From meows and purrs to chirps and trills, cats use a variety of sounds to communicate with their owners and other cats. They also use body language, such as tail movements and ear positions, to convey their moods and intentions.',
         },
         {
-          name: 'Stark Industries',
-          link: 'https://www.starkindustries.com/',
+          title: 'Cats are good for your health',
+          text: 'Studies have shown that owning a cat can have numerous health benefits, including lower stress levels, reduced risk of heart disease and stroke, and improved mental health. Plus, cats make great companions and can provide a source of comfort and emotional support.',
         },
       ],
     },
+
+    newsOtherBlock: {
+      title: 'See other news',
+      cards: [
+        {
+          title: 'NASA Launches New Mars Rover',
+          description:
+            "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.",
+          isTop: false,
+          idNew: true,
+        },
+        {
+          title:
+            'GameStop Shares Soar as Reddit Traders Rally',
+          description:
+            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title:
+            'New Study Shows Link Between Exercise and Longevity',
+          description:
+            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title: 'Amazon Expands Grocery Delivery Service',
+          description:
+            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
+          isTop: false,
+          idNew: true,
+        },
+      ],
+    },
+
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-// ================================================================
+
+
+
 
 
 // Підключаємо роутер до бек-енду
