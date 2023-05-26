@@ -1,0 +1,44 @@
+  {{#each goodsBlock}}
+
+    <div class="g-5">
+      <div class="row m-2">
+
+          <div class="col-2">
+            <img src="{{image}}" class="p-4" alt="">
+          </div>
+
+          <div class="col-4 p-4">
+            <h2>{{name}}</h2>
+            <p>{{description}}</p> 
+          </div> 
+       
+        {{#with price}}
+          <div class="col-2 p-4">
+            <h5>{{title}}: {{value}}</h5>
+          </div>      
+        {{/with}}
+
+        <div class="col-2 p-4">
+          <p>{{amount}}</p>
+        </div>        
+        
+        <div class="row col-2">
+          <div class="p-5">
+            {{#each buttons}}
+               
+            {{#if isPrimary}}        
+              <button class="btn btn-primary m-2">{{text}}</button>        
+            {{/if}}
+           
+            {{#if isDanger}}      
+              <button class="btn btn-danger m-2">{{text}}</button>       
+            {{/if}}      
+                 
+            {{/each}}
+          </div> 
+        </div>
+
+      </div> 
+    </div>      
+ 
+  {{/each}}
