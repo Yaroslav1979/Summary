@@ -1,4 +1,38 @@
-<div class="row">
+  <div>
+    <div>
+    {{#with purchase}}
+      {{#each tabs}}
+        {{this}}
+      {{/each}}
+      </div>
+      
+        <div>
+      {{#with actionBlock}}
+        <input type="" placeholder="placeholder" lass="p">
+        
+        {{#each buttons}}
+
+        <a href="{{link}}" target="_blank">
+
+         {{#if isSuccess}}
+         <button class="btn btn-success m-2">{{text}}</button>
+        {{/if}}       
+        
+        {{#if isOutline}}
+         <button class="btn btn-outline-success m-2">{{text}}</button>
+        {{/if}}
+        
+        {{#if isDanger}}              
+         <button class="btn btn-outline-danger m-2">{{text}}</button>
+        {{/if}}
+
+        </a> 
+              
+        {{/each}}
+      {{/with}}
+      </div>
+      <br> <hr>
+      <div class="row">
         
         {{#each itemList}}
         
@@ -36,3 +70,5 @@
         {{/with}}        
         {{/each}}        
       </div>
+    {{/with}}
+  </div> 
