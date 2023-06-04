@@ -1,0 +1,109 @@
+<main> 
+
+    <div>  
+      <ul class="breadcrumb"> 
+        {{#each breadcrumb}}
+        <li class="breadcrumb-item">
+        {{#if @last}}
+        {{name}}
+          {{else}}
+          <a href="{{url}}">{{name}}
+        </a>
+      {{/if}}
+        </li>
+        {{/each}}
+        </ul>
+      </div>
+    <div>
+
+    <div>
+       <h1>{{header}} </h1>
+    </div> 
+
+    <div class="row col-12">
+      {{#each sortBlock}}            
+          <div class="col-3">
+              <label class="form-label" for="A">{{placeholder}}                   
+                <select class="form-select" id="A">
+                {{#each options}}                    
+                  <option value="{{value}}">{{text}} </option>
+                {{/each}}
+                </select>
+              </label>  
+          </div>
+      {{/each}}
+    
+
+    <div class="row col-4">
+      <div class="card card-body m-2">
+      {{#with filterBlock}}
+
+       <div class="m-2">
+
+        {{#with sellers}}
+          <p><b>{{title}} </b></p>
+           {{#each list}}
+             <div class="form-check m-2"> 
+              <label class="form-check-label">{{value}} </label>
+              <input type="checkbox" class="form-check-input">
+            </div>
+           {{/each}}
+        {{/with}}
+        <hr>
+
+        {{#with brands}}
+          <p><b>{{title}} </b></p>
+          <input class="col-12" type="text" placeholder="{{input.placeholder}}">
+           {{#each options}}
+             <div class="form-check m-2"> 
+              <label class="form-check-label">{{value}} </label>
+              <input type="checkbox" class="form-check-input">
+            </div>
+           {{/each}}
+        {{/with}}
+        <hr>
+
+        {{#with price}}
+        <p><b>{{title}} </b></p>        
+        <label class="form-label">form:
+        <input class="col-12" type="number" placeholder="{{range.from}}">
+         </label>
+         <label class="form-label">to:
+        <input class="col-12" type="number" placeholder="{{range.to}}">
+        </label>
+        <a href="{{button.link}}">
+          <button class="btn btn-outline-dark">{{button.text}} </button>
+        </a>
+        {{/with}} 
+        <hr>
+
+        {{#each filterList}}
+          {{#with this}}
+          <p><b>{{title}} </b></p>
+             {{#each options}}
+             <div class="form-check m-2"> 
+              <label class="form-check-label">{{value}} </label>
+              <input type="checkbox" class="form-check-input">
+            </div>
+           {{/each}}
+           {{/with}}
+        {{/each}}
+       </div>
+
+      </div>
+      {{/with}}      
+    </div>
+
+   
+        {{>catalogItem}}
+
+    
+
+  </div> 
+
+    
+        {{>shopaction}}      
+</main>
+    
+  
+  
