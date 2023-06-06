@@ -4,12 +4,14 @@
 --}}
 
     <main>
-         <section>
-            {{>nav}}
+        {{>nav}}
             <div>
-                <h1> {{name}} </h1>
+                <div class="card text-bg-danger p-4">
+                <h1 class="display-2"> {{name}} </h1>
                 <P>{{description}}</P>
+                </div>
                 <hr>
+                <div class="card card-body text-bg-secondary">
                 <h2>History:</h2>
                 <ul>
                     {{#with history}}
@@ -48,15 +50,9 @@
                     <li> name: {{name}} <br>
                     type: {{type}} </li>
                     {{/each}}
-                </ul>
-               
-                
-                
-               
-
-                
-            </div>                
-        </section>       
+                </ul>              
+                </div>
+            </div> 
     </main>
   
 {{!-- 

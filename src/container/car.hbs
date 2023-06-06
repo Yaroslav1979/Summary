@@ -4,15 +4,26 @@
 --}}
 
     <main>
-         <section>
-            {{>nav}}
-            <div>
+           {{>nav}}
+
+            <div class="text-center"> 
                 <h1> Car passport</h1>
-                <p>Make:<b> {{make}} </b></p>
-                <p>Model:<b> {{model}} </b></p>
-                <p>Year:<b> {{year}} </b></p>
-                <p>Color:<b> {{color}} </b></p>
-                <p> Features: 
+            </div >
+            <div class="row">
+                <div class="card card-body col-4">
+                    <img src="https://picsum.photos/400/200" alt="photo">
+                </div>
+                <div class="card card-body col-4">
+                    <p>Make:<b> {{make}} </b></p>
+                    <p>Model:<b> {{model}} </b></p>
+                    <p>Year:<b> {{year}} </b></p>
+                    <p>Color:<b> {{color}} </b></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="card col-6">
+                <h4> Features: </h4>
                     <Ol> {{#with features}}
                {{!-- ------------------------- --}}
                     <li> Interior:{{#with interior}}
@@ -125,7 +136,9 @@
             {{/with}} 
             </Ol>
             </p>
-            <p> Engine: {{#with engine}}
+            </div>
+            <div class="card col-6">
+            <h4> Engine: {{#with engine}}</h4>
                 <ul>
                     <li> type: {{type}} </li>
                     <li> displacement: {{displacement}} </li>
@@ -138,7 +151,7 @@
                         {{/with}} </li>
                 </ul>                  
               {{/with}}
-             </p>
+             
 
              <p> Fuel economy: {{#with fuel_economy}}
                 <ul>
@@ -163,9 +176,9 @@
                 </ul>                  
               {{/with}}
              </p>
-
+            </div>
             </div>           
-        </section>       
+             
         </main>
   
 {{!-- 

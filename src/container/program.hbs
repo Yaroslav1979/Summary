@@ -4,19 +4,21 @@
 --}}
 
     <main>
-         <section>
-            {{>nav}}
+         {{>nav}}
             {{#with program.excursion}}
+            <div class="text-center text-bg-warning">
             <h1> {{name}}</h1>
             <div>
-                <b> {{location.city}} ({{location.country}}) </b>
+                <h3>{{location.city}} ({{location.country}}) </h3>
             </div> <br>
             <div> date: {{date}} </div>
+            </div>
 
-            <h2>Program:</h2>
-            
-            <ol> {{#each program}}
-            <li> <h3>{{name}}</h3>
+            <h2 class="text-center m-3">Program:</h2>
+            <div class="row">                
+             {{#each program}}  
+                <div class="card col-6 p-4">
+                     <h3>{{name}}</h3>
                 <ul>               
                 
                 <li>type:<b>"{{type}}",</b></li>
@@ -74,11 +76,10 @@
                     {{/with}} 
                     </li>                    
                  </ul> 
-                </li>               
+                  </div> 
              {{/each}} 
-             </ol>
-            {{/with}}         
-        </section>       
+             </div> 
+            {{/with}}    
     </main>
   
 {{!-- 

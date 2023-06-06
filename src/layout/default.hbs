@@ -17,17 +17,21 @@
   </head>
 
   <body>
+    {{>nav}}
+
     {{#with header}}
     <header>
-        <div>
+      <div class="row">
+        <img class="col-6" src="https://picsum.photos/400/200" alt="photo">
+        <div class=" col-6">
+        <div class="card card-header">
             <h1>{{name.firstname}} {{name.lastname}} </h1>
-        </div>
-        <div>
+        
              <b>{{position}}</b>
         </div>
         <br>
         <div>
-            <em> {{salary}} </em>
+            <em> {{salary}}</em>
         </div>
         <br>
         <div>
@@ -35,11 +39,13 @@
               {{address}} 
             </address>            
         </div>
+        </div>
+        </div>
         <br>
         <hr>
     </header>
     {{/with}}
-    {{>nav}}
+    
     
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
     {{{body}}}

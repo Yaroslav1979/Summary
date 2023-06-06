@@ -9,31 +9,34 @@
     <main>
       
         <section>
+            <div class="card card-header">
             {{>title data="Work history"}}
-
-            <div>
-                <ul>
+            </div>
+            <div class="card card-body my-4">
+                <ul >
                     {{#each works}}
                      <li>
-                         <div> {{position}} </div> 
+                         <div> <h4> {{position}} </h4></div> 
                          
                          <br>
 
-                         <div> {{duration.form}} - 
+                         <div class=""> 
+                            {{duration.form}} - 
                              {{#if duration.to}} {{duration.to}} 
                              {{else}} (Працюю понині)
-                             {{/if}} </div> 
+                             {{/if}} 
+                        </div> 
                          <br>
                          <div>
-                            {{#if company.url}}{{>link text=company.name href=company.url blank=true noLine=true}} 
+                            {{#if company.url}}Company: {{>link text=company.name href=company.url blank=true noLine=true}} 
                             {{/if}}                                                  
-                            {{#unless company.url}} <b>{{company.name}}</b> 
+                            {{#unless company.url}} <big> Company: </big><b>{{company.name}}</b> 
                             {{/unless}}
                         </div> 
                         <br>
-                        <div> 
-                         Project ({{projectAmount}})
-                        </div>
+                        <h5> 
+                         Project ({{projectAmount}}):
+                        </h5>
                         <br>
                         <ul>
                             {{#each projects}}
@@ -41,13 +44,14 @@
                                 <div>  {{>link text=name href=url blank=true noLine=true}} </div>
                                 </if>  
                                 <br> 
-                                <div> <p>{{about}}</p></div>
+                                <div > <p class="display-6">{{about}}</p></div>
                                 <br>
-                                <div> 
+                                <div class="row">
+                                <div class="card card-body text-bg-secondary col-4 mx-3"> 
                                     <em> {{nameStacks}} ({{stacksAmount}})</em>
-                                </div>
+                                
                                 <br>
-                                <ul>
+                                <ul >
                                     {{#each stacks}}
                                         <li>
                                         <div> 
@@ -56,10 +60,11 @@
                                         </li>
                                     {{/each}}
                                 </ul>
-                                <br>
-                                <div> 
-                                    <em> {{nameAwards}} ({{awardsAmount}})</em>
                                 </div>
+                                <br>
+                                <div class="card card-body text-bg-secondary col-4 mx-3"> 
+                                    <em> {{nameAwards}} ({{awardsAmount}})</em>
+                                
                                 <br>
                                 <ul>
                                     {{#each awards}}
@@ -70,6 +75,8 @@
                                         </li>
                                     {{/each}}
                                 </ul>
+                                </div>
+                                </div>
                             </li>
                             {{/each}}
                         </ul>
