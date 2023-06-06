@@ -1,38 +1,15 @@
-<div class="row">
-        
-        {{#each itemList}}
-        
-          
-        {{#with .}}
-        
-        <div class="col-4">
-        <p>{{number}} </p>
 
-        <p>{{status}} </p>
-        </div>
-        
-         <p class="col-2">
-          {{#with amount}}
-          {{title}}: <br> {{value}}
-          {{/with}} 
-        </p>
+<div class='row'>
 
-          <div class="col-4 py-2">
-          {{#each images}}
-          <img src="{{this}}" alt="Picture">
-          {{/each}}
-          </div>
-
-          <div class="col-2">
-          {{#with button}}
-            <a  href="{{link}}" target="_blank">
-            {{#if isPrimary}}
-              <button class="btn btn-primary m-2">{{text}}</button>
-            {{/if}}
-            </a>                        
-          {{/with}}
-          </div>
-          <br> <hr>   
-        {{/with}}        
-        {{/each}}        
-      </div>
+  <div class='card-body text-center text-bg-success my-2'>
+  {{#with service}} 
+  <h2>{{title}} </h2>
+  <p>{{description}}</p>
+    {{#each buttons}}
+  <a href="{{link}}">
+    <button class="btn btn-primary">{{text}} </button>
+  </a>
+    {{/each}}
+  {{/with}} 
+    </div>        
+</div>
