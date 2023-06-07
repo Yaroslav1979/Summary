@@ -4,20 +4,31 @@
 --}}
 
     <main>
-         <section>
-            {{>nav}}
-            <h1> {{name}} </h1>
+          {{>nav}}
+            <div class=" card text-bg-success p-4 text-center">
+                <h1> {{name}} </h1>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="card card-body col-8 m-2 ">
             <p> <b>Birthdate:</b> {{birthdate}}, {{birthplace}}</p>
             <p> <b>Deathdate:</b> {{deathdate}}, {{deathplace}} </p>
             <p> <b>Nationality:</b> {{nationality}} </p>        
             <p> <b>Occupation:</b> {{occupation}} </p>
-            <h3> Known_for: </h3>              
-                <ul>
-                     {{#each known_for}}
-                    <li> <em> {{''}} </em></li>
-                    {{/each}}
-                </ul>                
+             </div>           
             
+                
+                <div class="card card-body col-3 m-2 text-end text-bg-info ">
+                    <h3> Known_for: </h3>              
+                    
+                        {{#each known_for}}
+                        <em> {{''}} </em>
+                        {{/each}}
+                                   
+                </div>
+            </div>
+            <hr>
+            <div class="card card-body text-bg-secondary">
             <h3>Education:</h3>
                 <ul>
                      {{#each education}}
@@ -81,9 +92,9 @@
                     Year: <em> {{ year}} </em><br>
                     Field: <em> {{field}} </em><br>
                     {{/with}}
-                    </p>                   
-        </section>       
-        </main>
+                    </p>
+                    </div>                   
+         </main>
   
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

@@ -7,13 +7,11 @@
     
 {{#with main}}
     <main>
+        <div class="text-bg-dark">
          {{#with summary}}
         <section>
             {{>title data=title big=true}}
-
-              {{!-- <div>
-                 <h2> {{title}} </h2>
-              </div> --}}
+              
               <div>
                 <p>
                     {{text}}
@@ -21,14 +19,12 @@
             </div>
         </section>
         {{/with}}
-               
+        </div>
+         <div class="text-bg-secondary">      
         {{#with experience}}
         <section>
             {{>title data="Other experience"}}
-            {{!-- <div>                
-                <h2>{{title}}</h2>                
-            </div> --}}
-            
+         
             <div>
                  <p>
                      {{text}}                     
@@ -37,6 +33,7 @@
                        
         </section>
         {{/with}}
+        </div>
         </main>
     {{/with}}
 

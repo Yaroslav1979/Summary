@@ -4,22 +4,27 @@
 --}}
 
 <div>
+     {{>nav}}
    {{#with person}}
     <main>
-        <section>
+        <section >
+            <div class="text-bg-dark ">
             <h1 hidden> Person </h1>
-            {{>nav}}
-           <h2>{{name}}</h2>
-           <hr>
-            <ul>               
-               <li> <p>age:   <em> {{age}}</em></p></li> 
-                 <li><p> gender: <em> {{gender}} </em></li>
+           
+            <div class="text-light text-end p-3">
+           <h2 class="display-3">{{name}}</h2>
+           </div>
+           
+            <div class="text-end p-3">               
+                <p>age:   <em> {{age}}</em></p> 
+                <p> gender: <em> {{gender}} </em></p>
                         
-            <li>{{#with address}} address: <address>{{street}} {{city}} {{state}} {{zip}} {{country}} </address>
-            {{/with}} </li>
-            </ul> 
+           {{#with address}}  <address>address: {{street}} {{city}} {{state}} {{zip}} {{country}} </address>
+            {{/with}} </p>
+            </div>
+            </div>
             <hr>
-            <h3>Education </h3>
+            <h3 class="text-uppercase text-primary">Education </h3>
             <ul>
                 {{#each education}}
                 <li> Degree: <em>{{degree}} </em></li>
@@ -29,10 +34,10 @@
                 {{/each}}
             </ul>
             <hr>
-            <h3>Work experience</h3>
-            <ul> 
+            <h3 class="text-uppercase text-primary">Work experience</h3>
+           
                 {{#each workExperience}}              
-               <li>Company: <em>{{company}}</em><br>
+              Company: <em>{{company}}</em><br>
                Title:   <em> {{title}}</em> <br>
                Working period: form <em>{{startDate}}</em> to 
                {{#if endDate}} <em>{{endDate}}</em> 

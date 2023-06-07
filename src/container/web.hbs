@@ -4,14 +4,21 @@
 --}}
 
     <main>
-         <section>
             {{>nav}}
-            <div>
                 {{#with web}}
-                <h1>Web languages</h1>
+                <div class="display-2 text-center">
+                <p>Web languages</p>
+                </div>
+                <div class="row">
+
                  {{#each languages}}
-                 <h2> {{name}} </h2>
-                <Ol> 
+                 
+                 <div class="card col-4 p-3">
+                    <div class="card-header text-bg-primary">
+                        <h2> {{name}} </h2>
+                    </div>
+                    <div class="card-body text-bg-warning">
+                   <Ol> 
                     <li> <p> version: <b> {{version}}</b></p></li>
                     <li> <p> description: <b> {{description}}</b></p></li>
                     <li> 
@@ -64,10 +71,12 @@
                     {{/if}}
                     </li>
                  </Ol>
+                 </div>
+                 </div>
                  {{/each}}
+                 </div>
                 {{/with}}
-            </div>                
-        </section>       
+            
     </main>
   
 {{!-- 

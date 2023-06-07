@@ -8,7 +8,8 @@
     {{#with main}}
     <main>
        <section>
-
+        <div class="row">
+        <div class="card card-body col-5 me-3 text-bg-primary">
 
         {{>title data="My education" big=true}}
             <ul>
@@ -20,9 +21,10 @@
                          {{/unless}}
                          </li>
                 {{/each }}
-            </ul>
-            
-
+            </ul>            
+        </div>    
+        
+        <div class="card card-body col-5 me-3 text-bg-secondary">
             {{>title data="My certificates"}}
             <ul>
                 {{#each certificate}}
@@ -33,7 +35,8 @@
             </ul>
 {{!-- Education page in progress... --}}
 
-   
+             </div>
+        </div>
         </section>
     </main>
    {{/with}}
